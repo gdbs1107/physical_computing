@@ -27,9 +27,11 @@ public class JuYeonService {
     }
 
     private void wakeUpMail() throws MessagingException {
-        for (int i = 0; i < 6; i++) {
+        /*for (int i = 0; i < 6; i++) {
             mailUtil.sendEmail();
-        }
+        }*/
+
+        mailUtil.sendEmail();
     }
 
 }
