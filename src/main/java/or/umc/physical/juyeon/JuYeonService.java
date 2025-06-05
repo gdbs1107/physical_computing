@@ -26,6 +26,15 @@ public class JuYeonService {
         }
     }
 
+    @Transactional
+    public void newJuYeon() {
+        JuYeon newJuyeon = JuYeon.builder()
+                .alarmCount(0)
+                .build();
+
+        juYeonRepository.save(newJuyeon);
+    }
+
     private void wakeUpMail() throws MessagingException {
         for (int i = 0; i < 6; i++) {
             mailUtil.sendEmail();

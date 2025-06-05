@@ -3,6 +3,7 @@ package or.umc.physical.juyeon;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -15,5 +16,10 @@ public class JuYeonController {
     public void wakeUpJuYeon() throws MessagingException {
 
         juYeonService.wakeUp();
+    }
+
+    @PostMapping("/juyeon")
+    public void juYeon(){
+        juYeonService.newJuYeon();
     }
 }
