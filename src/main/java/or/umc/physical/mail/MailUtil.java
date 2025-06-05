@@ -23,6 +23,9 @@ public class MailUtil {
     @Value("${spring.mail.username}")
     private String configEmail;
 
+    @Value("${juyeon.mail}")
+    private String juyeonMail;
+
     public void sendEmail() throws MessagingException {
 
         MimeMessage emailForm = createEmailForm();
@@ -53,8 +56,7 @@ public class MailUtil {
     private MimeMessage createEmailForm() throws MessagingException {
         MimeMessage message = mailSender.createMimeMessage();
 
-        /*message.addRecipients(MimeMessage.RecipientType.TO, "jeonjy0630@naver.com");*/
-        message.addRecipients(MimeMessage.RecipientType.TO, "gdbs1107@naver.com");
+        message.addRecipients(MimeMessage.RecipientType.TO, juyeonMail);
         message.setSubject("주연아 일어나라 X100 🔔");
         message.setFrom(configEmail);
 
