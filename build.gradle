@@ -36,6 +36,14 @@ dependencies {
 
     // Swagger
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+
+    // Spring Boot Mail Starter
+    implementation 'org.springframework.boot:spring-boot-starter-mail'
+
+    //thymeleaf
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
+    implementation 'ognl:ognl:3.3.1'
 }
 
 tasks.named('test') {

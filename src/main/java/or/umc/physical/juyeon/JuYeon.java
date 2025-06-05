@@ -1,4 +1,4 @@
-package or.umc.physical;
+package or.umc.physical.juyeon;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

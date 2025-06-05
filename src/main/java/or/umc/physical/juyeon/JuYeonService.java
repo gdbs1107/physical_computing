@@ -1,19 +1,20 @@
-package or.umc.physical;
+package or.umc.physical.juyeon;
 
+import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
+import or.umc.physical.mail.MailUtil;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
 public class JuYeonService {
 
     private final JuYeonRepository juYeonRepository;
+    private final MailUtil mailUtil;
 
     @Transactional
-    public void wakeUp(){
+    public void wakeUp() throws MessagingException {
         JuYeon juyeon = juYeonRepository.findById(1L)
                 .orElseThrow(() -> new RuntimeException("주연이를 찾을 수가 없어요"));
 
@@ -25,8 +26,10 @@ public class JuYeonService {
         }
     }
 
-    private void wakeUpMail(){
-        throw new IllegalArgumentException("주연이한테 일어나라고 메일 보내기");
+    private void wakeUpMail() throws MessagingException {
+        for (int i = 0; i < 6; i++) {
+            mailUtil.sendEmail();
+        }
     }
 
 }

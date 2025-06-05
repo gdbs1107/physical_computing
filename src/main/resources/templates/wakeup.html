@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>일어나! 주연!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #fff5f5;
+            color: #2c2c2c;
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            color: #d90429;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .alarm-count {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ef233c;
+        }
+        .wake-up-box {
+            border: 3px dashed #ef233c;
+            padding: 30px;
+            background-color: #ffe0e0;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<div class="wake-up-box">
+    <h1>🔔 일어나, 주연아!!! 🔔</h1>
+    <p>너 지금 몇 번째 알람이야?</p>
+    <p class="alarm-count" th:text="'현재 알람 횟수: ' + ${alarmCount} + '회'"></p>
+    <p>더 자면... 너 정말 늦는다 😡</p>
+    <p><strong>지금 당장 일어나서 정신 차리자!</strong></p>
+</div>
+</body>
+</html>
